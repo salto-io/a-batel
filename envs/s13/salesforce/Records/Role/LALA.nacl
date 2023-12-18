@@ -2,7 +2,7 @@ salesforce.Role LALA {
   fullName = "LALA"
   caseAccessLevel = "Edit"
   contactAccessLevel = "Edit"
-  description = "LALA"
+  description = "LALA pull"
   mayForecastManagerShare = false
   name = "LALA single-env editing pull change pull change another pull"
   opportunityAccessLevel = "Edit"
