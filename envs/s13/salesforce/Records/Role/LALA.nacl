@@ -1,0 +1,11 @@
+salesforce.Role LALA {
+  fullName = "LALA"
+  caseAccessLevel = "Edit"
+  contactAccessLevel = "Edit"
+  description = "LALA"
+  mayForecastManagerShare = false
+  name = "LALA single-env editing pull change pull change another pull"
+  opportunityAccessLevel = "Edit"
+  parentRole = salesforce.Role.instance.CEO
+  _alias = "LALA"
+}
