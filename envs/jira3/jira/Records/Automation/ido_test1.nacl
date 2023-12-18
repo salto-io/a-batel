@@ -1,0 +1,144 @@
+jira.Automation ido_test1@s {
+  name = "ido test1"
+  state = "ENABLED"
+  description = ""
+  authorAccountId = {
+    id = "640a4787f00d095406f6727f"
+    displayName = "Ido Amit"
+  }
+  actor = {
+    type = "ACCOUNT_ID"
+    value = {
+      id = "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077"
+      displayName = "Automation for Jira"
+    }
+  }
+  trigger = {
+    component = "TRIGGER"
+    schemaVersion = 1
+    type = "jira.issue.event.trigger:assigned"
+    value = {
+      eventKey = "jira:issue_updated"
+      issueEvent = "issue_assigned"
+    }
+    children = [
+    ]
+    conditions = [
+    ]
+  }
+  components = [
+    {
+      component = "CONDITION"
+      schemaVersion = 3
+      type = "jira.issue.condition"
+      value = {
+        selectedField = {
+          type = "ID"
+          value = jira.Field.instance.Status__status
+        }
+        selectedFieldType = "status"
+        comparison = "ONE_OF"
+        compareFieldValue = {
+          type = "NAME"
+          multiValue = true
+          values = [
+            jira.Status.instance.done.name,
+          ]
+        }
+      }
+      children = [
+      ]
+      conditions = [
+      ]
+    },
+    {
+      component = "CONDITION"
+      schemaVersion = 4
+      type = "jira.user.condition"
+      value = {
+        conditions = [
+          {
+            field = jira.Field.instance.Reporter__user
+            check = "USER_IS"
+            criteria = [
+              {
+                type = "ID"
+                value = {
+                  id = "640a4787f00d095406f6727f"
+                  displayName = "Ido Amit"
+                }
+              },
+            ]
+          },
+        ]
+        operator = "OR"
+      }
+      children = [
+      ]
+      conditions = [
+      ]
+    },
+    {
+      component = "ACTION"
+      schemaVersion = 1
+      type = "cmdb.object.edit.attributes"
+      value = {
+        attributes = [
+          {
+            name = "Device Type"
+          },
+        ]
+      }
+      children = [
+      ]
+      conditions = [
+      ]
+    },
+    {
+      component = "ACTION"
+      schemaVersion = 1
+      type = "cmdb.object.create"
+      value = {
+        workspaceId = "68d020c3-b88e-47dc-9231-452f7dc63521"
+        schemaLabel = "idoA Schema"
+        schemaId = "5"
+        objectTypeLabel = "Department"
+        objectTypeId = "311"
+        attributes = [
+          {
+            name = "Name"
+            value = "ido Obj type"
+            isLabel = true
+          },
+        ]
+      }
+      children = [
+      ]
+      conditions = [
+      ]
+    },
+  ]
+  canOtherRuleTrigger = false
+  notifyOnError = "FIRSTERROR"
+  labels = [
+  ]
+  tags = [
+    {
+      tagType = "IS_RULE_UPDATED"
+      tagValue = "true"
+    },
+  ]
+  ruleHome = {
+    ruleLifecycleHome = {
+      locationARI = "ari:cloud:jira-software::site/128baddc-c238-4857-b249-cfc84bd10c4b"
+    }
+    ruleBillingHome = {
+      locationARI = "ari:cloud:jira-software::site/128baddc-c238-4857-b249-cfc84bd10c4b"
+    }
+  }
+  writeAccessType = "UNRESTRICTED"
+  collaborators = [
+  ]
+  billingType = "NORMAL"
+  _alias = "ido test1"
+}

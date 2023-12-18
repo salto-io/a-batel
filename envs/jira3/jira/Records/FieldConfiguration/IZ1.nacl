@@ -1,0 +1,5 @@
+jira.FieldConfiguration IZ1 {
+  name = "IZ1"
+  description = "dfd"
+  
+}

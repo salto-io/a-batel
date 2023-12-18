@@ -1,0 +1,42 @@
+jira.Board LIORTEAM_board2@s {
+  name = "LIORTEAM board2"
+  type = "simple"
+  admins = {
+    users = [
+      {
+        id = "60e8b78784c9920071996842"
+        displayName = "Lior Neudorfer"
+      },
+    ]
+  }
+  location = {
+    projectId = jira.Project.instance.LiorTeamManaged
+  }
+  filterId = jira.Filter.instance.missing_10007
+  columnConfig = {
+    columns = [
+      {
+        name = "To Do"
+        statuses = [
+          jira.Status.instance.missing_10012,
+        ]
+      },
+      {
+        name = "In Progress"
+        statuses = [
+          jira.Status.instance.missing_10013,
+        ]
+      },
+      {
+        name = "Done"
+        statuses = [
+          jira.Status.instance.missing_10014,
+        ]
+      },
+    ]
+    constraintType = "none"
+  }
+  estimation = {
+    field = jira.Field.instance.Story_point_estimate__jsw_story_points__c@ssuubbuu
+  }
+}

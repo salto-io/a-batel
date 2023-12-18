@@ -1,0 +1,6 @@
+jira.IssueType testMany33 {
+  description = "A problem or error.2"
+  name = "testMany33"
+  untranslatedName = "testMany33"
+  hierarchyLevel = 0
+}

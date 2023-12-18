@@ -1,0 +1,15 @@
+jira {
+  fetch = {
+    include = [
+      {
+        type = ".*"
+      },
+    ]
+    exclude = [
+    ]
+    splitFieldConfiguration = true
+  }
+  deploy = {
+    forceDelete = false
+  }
+}

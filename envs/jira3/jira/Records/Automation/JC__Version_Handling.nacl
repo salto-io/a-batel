@@ -1,0 +1,205 @@
+jira.Automation JC__Version_Handling@fss {
+  name = "JC: Version Handling"
+  state = "DISABLED"
+  description = ""
+  authorAccountId = {
+    id = "60e8b78784c9920071996842"
+    displayName = "Lior Neudorfer"
+  }
+  actor = {
+    type = "ACCOUNT_ID"
+    value = {
+      id = "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077"
+      displayName = "Automation for Jira"
+    }
+  }
+  trigger = {
+    component = "TRIGGER"
+    schemaVersion = 1
+    type = "jira.incoming.webhook"
+    value = {
+      webhookToken = "27c60112b12e704e562091258446b3730f355d8d"
+      searchOrProvide = "none"
+    }
+    children = [
+    ]
+    conditions = [
+    ]
+  }
+  components = [
+    {
+      component = "ACTION"
+      schemaVersion = 1
+      type = "jira.version.create"
+      value = {
+        versionName = "release-{{webhookData.releaseVersion}}"
+        overrideReleaseDate = "SET_ON_EMPTY"
+        project = {
+          type = "COPY"
+          value = "current"
+        }
+      }
+      children = [
+      ]
+      conditions = [
+      ]
+    },
+    {
+      component = "ACTION"
+      schemaVersion = 1
+      type = "jira.version.release"
+      value = {
+        versionName = "{{version.name}}"
+        overrideReleaseDate = "SET_ON_EMPTY"
+        project = {
+          type = "COPY"
+          value = "current"
+        }
+      }
+      children = [
+      ]
+      conditions = [
+      ]
+    },
+    {
+      component = "ACTION"
+      schemaVersion = 1
+      type = "slack.notification"
+      value = {
+        webhookUrl = "https://hooks.slack.com/mywebhook"
+        body = ":boom:  Just released version {{version.name}} to production!"
+        channel = "#teamchannel"
+        automationSender = true
+      }
+      children = [
+      ]
+      conditions = [
+      ]
+    },
+    {
+      component = "BRANCH"
+      schemaVersion = 1
+      type = "jira.issue.related"
+      value = {
+        relatedType = "jql"
+        jql = "${ jira.Field.instance.Status__status } = \"Waiting to deploy\" AND (${ jira.Field.instance.Labels__array } is EMPTY or ${ jira.Field.instance.Labels__array } not in (cloud-deployed))"
+        linkTypes = [
+        ]
+        onlyUpdatedIssues = false
+        similarityLimit = 40
+        compareValue = 0
+      }
+      children = [
+        {
+          component = "ACTION"
+          schemaVersion = 10
+          type = "jira.issue.transition"
+          value = {
+            operations = [
+            ]
+            sendNotifications = true
+            destinationStatus = {
+              type = "NAME"
+              value = jira.Status.instance.done.name
+            }
+            transitionMatch = ""
+          }
+          children = [
+          ]
+          conditions = [
+          ]
+        },
+        {
+          component = "ACTION"
+          schemaVersion = 10
+          type = "jira.issue.edit"
+          value = {
+            operations = [
+              {
+                field = {
+                  type = "ID"
+                  value = jira.Field.instance.Labels__array
+                }
+                fieldType = "labels"
+                type = "ADDREMOVE"
+                value = {
+                  ADD = [
+                    {
+                      type = "FREE"
+                      value = "cloud-deployed"
+                    },
+                  ]
+                  REMOVE = [
+                  ]
+                }
+              },
+              {
+                field = {
+                  type = "ID"
+                  value = jira.Field.instance.Fix_versions__array@suu
+                }
+                fieldType = "fixVersions"
+                type = "SET"
+                value = [
+                  {
+                    type = "SMART"
+                    value = "{{version}}"
+                  },
+                ]
+              },
+            ]
+            sendNotifications = true
+          }
+          children = [
+          ]
+          conditions = [
+          ]
+        },
+        {
+          component = "ACTION"
+          schemaVersion = 1
+          type = "slack.notification"
+          value = {
+            webhookUrl = "https://hooks.slack.com/mywebhook"
+            body = ":ship: {{#issue}}<https://codebarrel.atlassian.net/browse/{{key}}|{{key}} - {{summary}}>{{/issue}} just shipped to customers"
+            channel = "#teamchannel"
+            automationSender = true
+          }
+          children = [
+          ]
+          conditions = [
+          ]
+        },
+      ]
+      conditions = [
+      ]
+    },
+  ]
+  canOtherRuleTrigger = false
+  notifyOnError = "FIRSTERROR"
+  labels = [
+  ]
+  tags = [
+    {
+      tagType = "IS_RULE_UPDATED"
+      tagValue = "true"
+    },
+    {
+      tagType = "WEBHOOK_TOKEN"
+      tagValue = "27c60112b12e704e562091258446b3730f355d8d"
+    },
+  ]
+  ruleHome = {
+    ruleLifecycleHome = {
+      locationARI = "ari:cloud:jira-software::site/128baddc-c238-4857-b249-cfc84bd10c4b"
+    }
+    ruleBillingHome = {
+      locationARI = "ari:cloud:jira-software::site/128baddc-c238-4857-b249-cfc84bd10c4b"
+    }
+  }
+  writeAccessType = "UNRESTRICTED"
+  collaborators = [
+  ]
+  billingType = "NORMAL"
+  _alias = "JC: Version Handling"
+}

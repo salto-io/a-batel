@@ -1,0 +1,6 @@
+jira.IssueType testIssueType2 {
+  description = ""
+  name = "testIssueType2"
+  untranslatedName = "testIssueType2"
+  hierarchyLevel = 0
+}

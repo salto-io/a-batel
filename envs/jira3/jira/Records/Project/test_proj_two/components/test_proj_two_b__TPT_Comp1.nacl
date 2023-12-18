@@ -1,0 +1,9 @@
+jira.ProjectComponent test_proj_two_b__TPT_Comp1@uumuub {
+  name = "TPT-Comp1"
+  description = "The first test component"
+  assigneeType = "PROJECT_DEFAULT"
+  _parent = [
+    jira.Project.instance.test_proj_two@b,
+  ]
+  _alias = "test-proj-two:TPT-Comp1"
+}

@@ -1,0 +1,39 @@
+jira.Board TEAM_board@s {
+  name = "TEAM board"
+  type = "simple"
+  admins = {
+    users = [
+      {
+        id = "62d20c47a94a6f9c0eff9866"
+        displayName = "Ido Zak"
+      },
+    ]
+  }
+  location = {
+    projectId = jira.Project.instance.TeamManagedIdo
+  }
+  filterId = jira.Filter.instance.missing_10093
+  columnConfig = {
+    columns = [
+      {
+        name = "To Do"
+        statuses = [
+          jira.Status.instance.missing_10181,
+        ]
+      },
+      {
+        name = "In Progress"
+        statuses = [
+          jira.Status.instance.missing_10182,
+        ]
+      },
+      {
+        name = "Done"
+        statuses = [
+          jira.Status.instance.missing_10183,
+        ]
+      },
+    ]
+    constraintType = "none"
+  }
+}

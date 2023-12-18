@@ -1,0 +1,5 @@
+jira.Status ready_for_deploy@s {
+  name = "ready for deploy"
+  statusCategory = jira.StatusCategory.instance.To_Do@s
+  description = ""
+}

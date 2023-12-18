@@ -1,0 +1,6 @@
+jira.IssueType LiorIssueTypeRenamed {
+  description = "MyIssueType!1Rebaned"
+  name = "LiorIssueTypeRenamed"
+  untranslatedName = "LiorIssueTypeRenamed"
+  hierarchyLevel = 0
+}

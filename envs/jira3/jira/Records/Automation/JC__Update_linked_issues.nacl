@@ -1,0 +1,205 @@
+jira.Automation JC__Update_linked_issues@fsss {
+  name = "JC: Update linked issues"
+  state = "DISABLED"
+  description = ""
+  authorAccountId = {
+    id = "60e8b78784c9920071996842"
+    displayName = "Lior Neudorfer"
+  }
+  actor = {
+    type = "ACCOUNT_ID"
+    value = {
+      id = "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077"
+      displayName = "Automation for Jira"
+    }
+  }
+  trigger = {
+    component = "TRIGGER"
+    schemaVersion = 1
+    type = "jira.issue.event.trigger:transitioned"
+    value = {
+      eventKey = "jira:issue_updated"
+      issueEvent = "issue_generic"
+      fromStatus = [
+      ]
+      toStatus = [
+        {
+          type = "NAME"
+          value = jira.Status.instance.done.name
+        },
+      ]
+    }
+    children = [
+    ]
+    conditions = [
+    ]
+  }
+  components = [
+    {
+      component = "CONDITION"
+      schemaVersion = 3
+      type = "jira.issue.condition"
+      value = {
+        selectedField = {
+          type = "ID"
+          value = jira.Field.instance.Project__project
+        }
+        selectedFieldType = "project"
+        comparison = "EQUALS"
+        compareFieldValue = {
+          type = "ID"
+          value = jira.Project.instance.JiraCon_Project@s
+          multiValue = false
+        }
+      }
+      children = [
+      ]
+      conditions = [
+      ]
+    },
+    {
+      component = "CONDITION"
+      schemaVersion = 3
+      type = "jira.issue.condition"
+      value = {
+        selectedField = {
+          type = "ID"
+          value = jira.Field.instance.Status__status
+        }
+        selectedFieldType = "status"
+        comparison = "EQUALS"
+        compareFieldValue = {
+          type = "NAME"
+          value = jira.Status.instance.done.name
+          multiValue = false
+        }
+      }
+      children = [
+      ]
+      conditions = [
+      ]
+    },
+    {
+      component = "ACTION"
+      schemaVersion = 10
+      type = "jira.issue.edit"
+      value = {
+        operations = [
+          {
+            field = {
+              type = "ID"
+              value = jira.Field.instance.Labels__array
+            }
+            fieldType = "labels"
+            type = "ADDREMOVE"
+            value = {
+              ADD = [
+                {
+                  type = "FREE"
+                  value = "Support-notified"
+                },
+              ]
+              REMOVE = [
+              ]
+            }
+          },
+        ]
+        sendNotifications = true
+      }
+      children = [
+      ]
+      conditions = [
+      ]
+    },
+    {
+      component = "BRANCH"
+      schemaVersion = 1
+      type = "jira.issue.related"
+      value = {
+        relatedType = "linked"
+        jql = ""
+        linkTypes = [
+          "relates to",
+        ]
+        onlyUpdatedIssues = false
+        similarityLimit = 40
+        compareValue = 0
+      }
+      children = [
+        {
+          component = "CONDITION"
+          schemaVersion = 3
+          type = "jira.issue.condition"
+          value = {
+            selectedField = {
+              type = "ID"
+              value = jira.Field.instance.Project__project
+            }
+            selectedFieldType = "project"
+            comparison = "EQUALS"
+            compareFieldValue = {
+              type = "ID"
+              value = jira.Project.instance.JiraCon_Project@s
+              multiValue = false
+            }
+          }
+          children = [
+          ]
+          conditions = [
+          ]
+        },
+        {
+          component = "ACTION"
+          schemaVersion = 1
+          type = "jira.issue.comment"
+          value = {
+            comment = '''
+Hi {{issue.fields.reporter.displayName.split(" ").first}},
+
+We just wanted to let you know that we've just released a new version of Automation for Jira, which resolves {{triggerIssue.key}} ({{triggerIssue.summary}})! 
+
+If you're on Jira Server please upgrade to the latest release to get this improvement via Global Administration > Manage add-ons. 
+In Jira Cloud this release is already available.
+
+Cheers,
+
+Automation for Jira
+'''
+            publicComment = false
+            sendNotifications = true
+            addCommentOnce = true
+          }
+          children = [
+          ]
+          conditions = [
+          ]
+        },
+      ]
+      conditions = [
+      ]
+    },
+  ]
+  canOtherRuleTrigger = false
+  notifyOnError = "FIRSTERROR"
+  labels = [
+  ]
+  tags = [
+    {
+      tagType = "IS_RULE_UPDATED"
+      tagValue = "true"
+    },
+  ]
+  ruleHome = {
+    ruleLifecycleHome = {
+      locationARI = "ari:cloud:jira-software::site/128baddc-c238-4857-b249-cfc84bd10c4b"
+    }
+    ruleBillingHome = {
+      locationARI = "ari:cloud:jira-software::site/128baddc-c238-4857-b249-cfc84bd10c4b"
+    }
+  }
+  writeAccessType = "UNRESTRICTED"
+  collaborators = [
+  ]
+  billingType = "NORMAL"
+  _alias = "JC: Update linked issues"
+}

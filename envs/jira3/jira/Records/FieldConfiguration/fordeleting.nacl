@@ -1,0 +1,5 @@
+jira.FieldConfiguration fordeleting {
+  name = "fordeleting"
+  description = ""
+  
+}

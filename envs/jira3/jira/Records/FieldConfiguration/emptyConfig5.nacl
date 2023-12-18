@@ -1,0 +1,5 @@
+jira.FieldConfiguration emptyConfig5 {
+  name = "emptyConfig5"
+  description = ""
+  
+}

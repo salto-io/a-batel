@@ -1,0 +1,13 @@
+jira.Screen AlonScreen4 {
+  tabs = {
+    asd = {
+      name = "asd"
+      fields = [
+        jira.Field.instance.NewCustomFieldLior__multicheckboxes__c,
+      ]
+      position = 0
+    }
+  }
+  name = "AlonScreen4"
+  description = ""
+}

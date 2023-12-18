@@ -1,0 +1,5 @@
+jira.FieldConfiguration Custom_field_config2@s {
+  name = "Custom field config2"
+  description = "description!"
+  
+}

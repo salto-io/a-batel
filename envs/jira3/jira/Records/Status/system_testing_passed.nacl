@@ -1,0 +1,5 @@
+jira.Status system_testing_passed@s {
+  name = "system testing passed"
+  statusCategory = jira.StatusCategory.instance.To_Do@s
+  description = ""
+}

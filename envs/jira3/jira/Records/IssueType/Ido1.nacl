@@ -1,0 +1,6 @@
+jira.IssueType Ido1 {
+  description = "A problem or error.6"
+  name = "Ido1"
+  untranslatedName = "Ido1"
+  hierarchyLevel = 0
+}

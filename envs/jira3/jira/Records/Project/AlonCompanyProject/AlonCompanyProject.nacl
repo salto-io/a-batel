@@ -1,0 +1,292 @@
+jira.Project AlonCompanyProject {
+  key = "LNCMPNPRJC"
+  description = "rfewrw4frt43t34"
+  url = "https://www.cnn.com"
+  name = "AlonCompanyProject"
+  projectCategory = jira.ProjectCategory.instance.ProjCatOne
+  projectTypeKey = "software"
+  components = [
+    jira.ProjectComponent.instance.AlonCompanyProject__test,
+    jira.ProjectComponent.instance.AlonCompanyProject__test2,
+  ]
+  workflowScheme = jira.WorkflowScheme.instance.1801BugWorkflowScheme4
+  permissionScheme = jira.PermissionScheme.instance.AlonPermissionScheme
+  notificationScheme = jira.NotificationScheme.instance.Default_Notification_Scheme@s
+  issueSecurityScheme = jira.SecurityScheme.instance.name
+  issueTypeScreenScheme = jira.IssueTypeScreenScheme.instance.test
+  issueTypeScheme = jira.IssueTypeScheme.instance.Default_Issue_Type_Scheme@s
+  fieldConfigurationScheme = jira.FieldConfigurationScheme.instance.test
+  leadAccountId = {
+    id = "5fa91999b2633d0076583a61"
+    displayName = "Alon Stern"
+  }
+  fieldContexts = [
+    jira.CustomFieldContext.instance.For_Jira_PCS_180060__select__c_ssbuuuu_label@uuuuuuumu,
+    jira.CustomFieldContext.instance.Version_Picker__single_version___version__c_ssjskuuuu_second@uuuuuuuuumu,
+    jira.CustomFieldContext.instance.guytest__float__c_qqqqq,
+    jira.CustomFieldContext.instance.testVersionPicker__multiversion__c_Default_Configuration_Scheme_for_testVersionPicker@uuuuussss,
+  ]
+  _generated_dependencies = [
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Affected_hardware__textfield__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Approver_groups__multigrouppicker__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Assignee__user@uumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Attachment__array@uumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Backout_plan__textarea__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Change_completion_date__datetime__c_ssuuuu@uumuuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Change_reason__select__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Change_risk__select__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Change_start_date__datetime__c_ssuuuu@uumuuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Change_type__select__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Components__array@uumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Description__string@uumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Event_date__datepicker__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_IdoA10K__cascadingselect__c@uumuuuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Impact__select__c@uumuuuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Implementation_plan__textarea__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Issue_Type__issuetype_suu@uumuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Labels__array@uumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Linked_Issues__array_suu@uumuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_NewCustomFieldLior__multicheckboxes__c@uumuuuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Planned_end__datetime__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Planned_start__datetime__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Priority__priority@uumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Product_categorization__cascadingselect__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Reporter__user@uumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Summary__string@uumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Test_plan__textarea__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_Urgency__select__c@uumuuuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config2_s_ido_date__datepicker__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Affected_hardware__textfield__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Approver_groups__multigrouppicker__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Assignee__user@uumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Attachment__array@uumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Backout_plan__textarea__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Change_completion_date__datetime__c_ssuuuu@uumuuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Change_reason__select__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Change_risk__select__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Change_start_date__datetime__c_ssuuuu@uumuuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Change_type__select__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Components__array@uumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Description__string@uumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Event_date__datepicker__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_IdoA10K__cascadingselect__c@uumuuuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Impact__select__c@uumuuuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Implementation_plan__textarea__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Issue_Type__issuetype_suu@uumuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Labels__array@uumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Linked_Issues__array_suu@uumuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_NewCustomFieldLior__multicheckboxes__c@uumuuuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Planned_end__datetime__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Planned_start__datetime__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Priority__priority@uumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Product_categorization__cascadingselect__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Reporter__user@uumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Summary__string@uumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Test_plan__textarea__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_Urgency__select__c@uumuuuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Custom_field_config_s_ido_date__datepicker__c_suuuu@uumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Affected_hardware__textfield__c_suuuu@uuuuuuumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Approver_groups__multigrouppicker__c_suuuu@uuuuuuumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Assignee__user@uuuuuuumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Attachment__array@uuuuuuumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Backout_plan__textarea__c_suuuu@uuuuuuumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Change_completion_date__datetime__c_ssuuuu@uuuuuuumuuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Change_reason__select__c_suuuu@uuuuuuumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Change_risk__select__c_suuuu@uuuuuuumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Change_start_date__datetime__c_ssuuuu@uuuuuuumuuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Change_type__select__c_suuuu@uuuuuuumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Components__array@uuuuuuumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Description__string@uuuuuuumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Event_date__datepicker__c_suuuu@uuuuuuumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_IdoA10K__cascadingselect__c@uuuuuuumuuuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Impact__select__c@uuuuuuumuuuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Implementation_plan__textarea__c_suuuu@uuuuuuumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Issue_Type__issuetype_suu@uuuuuuumuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Labels__array@uuuuuuumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Linked_Issues__array_suu@uuuuuuumuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_NewCustomFieldLior__multicheckboxes__c@uuuuuuumuuuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Planned_end__datetime__c_suuuu@uuuuuuumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Planned_start__datetime__c_suuuu@uuuuuuumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Priority__priority@uuuuuuumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Product_categorization__cascadingselect__c_suuuu@uuuuuuumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Reporter__user@uuuuuuumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Summary__string@uuuuuuumuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Test_plan__textarea__c_suuuu@uuuuuuumuuuuuum
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_Urgency__select__c@uuuuuuumuuuuu
+    },
+    {
+      reference = jira.FieldConfigurationItem.instance.Jira_Service_Management_Field_Configuration_for_Project_IP_s_ido_date__datepicker__c_suuuu@uuuuuuumuuuuuum
+    },
+  ]
+}

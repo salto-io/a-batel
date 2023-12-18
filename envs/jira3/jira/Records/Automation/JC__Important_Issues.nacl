@@ -1,0 +1,203 @@
+jira.Automation JC__Important_Issues@fss {
+  name = "JC: Important Issues"
+  state = "DISABLED"
+  description = ""
+  authorAccountId = {
+    id = "60e8b78784c9920071996842"
+    displayName = "Lior Neudorfer"
+  }
+  actor = {
+    type = "ACCOUNT_ID"
+    value = {
+      id = "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077"
+      displayName = "Automation for Jira"
+    }
+  }
+  trigger = {
+    component = "TRIGGER"
+    schemaVersion = 1
+    type = "jira.issue.event.trigger:created"
+    value = {
+      eventKey = "jira:issue_created"
+      issueEvent = "issue_created"
+    }
+    children = [
+    ]
+    conditions = [
+    ]
+  }
+  components = [
+    {
+      component = "CONDITION"
+      schemaVersion = 1
+      type = "jira.condition.container.block"
+      children = [
+        {
+          component = "CONDITION_BLOCK"
+          schemaVersion = 1
+          type = "jira.condition.if.block"
+          value = {
+            conditionMatchType = "ALL"
+          }
+          children = [
+            {
+              component = "ACTION"
+              schemaVersion = 3
+              type = "jira.issue.outgoing.email"
+              value = {
+                fromName = ""
+                replyTo = ""
+                to = [
+                  {
+                    type = "COPY"
+                    value = "assignee"
+                  },
+                ]
+                cc = [
+                ]
+                bcc = [
+                ]
+                subject = "A high priority issue has been raised"
+                body = "{{issue.key}} is high priority! Panic...but not too much. "
+                mimeType = "text/html"
+                convertLineBreaks = true
+              }
+              children = [
+              ]
+              conditions = [
+              ]
+            },
+          ]
+          conditions = [
+            {
+              component = "CONDITION"
+              schemaVersion = 3
+              type = "jira.issue.condition"
+              value = {
+                selectedField = {
+                  type = "ID"
+                  value = jira.Field.instance.Priority__priority
+                }
+                selectedFieldType = "priority"
+                comparison = "ONE_OF"
+                compareFieldValue = {
+                  type = "ID"
+                  multiValue = true
+                  values = [
+                    jira.Priority.instance.High,
+                    jira.Priority.instance.Medium,
+                  ]
+                }
+              }
+              children = [
+              ]
+              conditions = [
+              ]
+            },
+          ]
+        },
+        {
+          component = "CONDITION_BLOCK"
+          schemaVersion = 1
+          type = "jira.condition.if.block"
+          value = {
+            conditionMatchType = "ALL"
+          }
+          children = [
+            {
+              component = "ACTION"
+              schemaVersion = 3
+              type = "jira.issue.assign"
+              value = {
+                assignType = "SPECIFY_USER"
+                assignee = {
+                  type = "ID"
+                  value = {
+                    id = "5b8ed5177a33352bf10f7a48"
+                    displayName = "Lior Neudorfer"
+                  }
+                }
+                excludedUsers = [
+                ]
+                userList = [
+                ]
+              }
+              children = [
+              ]
+              conditions = [
+              ]
+            },
+            {
+              component = "ACTION"
+              schemaVersion = 1
+              type = "slack.notification"
+              value = {
+                webhookUrl = "https://hooks.slack.com/services/TFCUT/example122233"
+                body = '''
+Hey {{assignee.displayName}},
+
+You better check out {{issue.key}} It's coming in HOT. 
+'''
+                channel = "#HOTROOM"
+                automationSender = true
+              }
+              children = [
+              ]
+              conditions = [
+              ]
+            },
+          ]
+          conditions = [
+            {
+              component = "CONDITION"
+              schemaVersion = 3
+              type = "jira.issue.condition"
+              value = {
+                selectedField = {
+                  type = "ID"
+                  value = jira.Field.instance.Priority__priority
+                }
+                selectedFieldType = "priority"
+                comparison = "EQUALS"
+                compareFieldValue = {
+                  type = "ID"
+                  value = jira.Priority.instance.Highest
+                  multiValue = false
+                }
+              }
+              children = [
+              ]
+              conditions = [
+              ]
+            },
+          ]
+        },
+      ]
+      conditions = [
+      ]
+    },
+  ]
+  canOtherRuleTrigger = false
+  notifyOnError = "FIRSTERROR"
+  labels = [
+  ]
+  tags = [
+    {
+      tagType = "IS_RULE_UPDATED"
+      tagValue = "true"
+    },
+  ]
+  ruleHome = {
+    ruleLifecycleHome = {
+      locationARI = "ari:cloud:jira-software::site/128baddc-c238-4857-b249-cfc84bd10c4b"
+    }
+    ruleBillingHome = {
+      locationARI = "ari:cloud:jira-software::site/128baddc-c238-4857-b249-cfc84bd10c4b"
+    }
+  }
+  writeAccessType = "UNRESTRICTED"
+  collaborators = [
+  ]
+  billingType = "NORMAL"
+  _alias = "JC: Important Issues"
+}

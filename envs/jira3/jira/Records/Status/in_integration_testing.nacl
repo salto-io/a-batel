@@ -1,0 +1,5 @@
+jira.Status in_integration_testing@s {
+  name = "in integration testing"
+  statusCategory = jira.StatusCategory.instance.To_Do@s
+  description = ""
+}

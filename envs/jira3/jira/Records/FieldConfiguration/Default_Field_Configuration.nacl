@@ -1,0 +1,6 @@
+jira.FieldConfiguration Default_Field_Configuration@s {
+  name = "Default Field Configuration"
+  description = "The default field configuration"
+  isDefault = true
+  
+}

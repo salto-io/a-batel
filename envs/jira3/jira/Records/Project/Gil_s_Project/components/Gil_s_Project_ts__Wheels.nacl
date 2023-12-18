@@ -1,0 +1,9 @@
+jira.ProjectComponent Gil_s_Project_ts__Wheels@uumuu {
+  name = "Wheels"
+  description = "The wheels go round and round"
+  assigneeType = "PROJECT_DEFAULT"
+  _parent = [
+    jira.Project.instance.Gil_s_Project@ts,
+  ]
+  _alias = "Gil's Project:Wheels"
+}

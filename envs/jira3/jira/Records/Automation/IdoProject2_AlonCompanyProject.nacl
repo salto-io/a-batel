@@ -1,0 +1,99 @@
+jira.Automation IdoProject2_AlonCompanyProject {
+  name = "IdoProject2"
+  state = "ENABLED"
+  description = ""
+  authorAccountId = {
+    id = "62d20c47a94a6f9c0eff9866"
+    displayName = "Ido Zak"
+  }
+  actor = {
+    type = "ACCOUNT_ID"
+    value = {
+      id = "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077"
+      displayName = "Automation for Jira"
+    }
+  }
+  trigger = {
+    component = "TRIGGER"
+    schemaVersion = 1
+    type = "jira.issue.comment.event.trigger:updated"
+    value = {
+      eventKey = "jira:issue_updated"
+      issueEvent = "issue_comment_updated"
+    }
+    children = [
+    ]
+    conditions = [
+    ]
+  }
+  components = [
+    {
+      component = "CONDITION"
+      schemaVersion = 4
+      type = "jira.user.condition"
+      value = {
+        conditions = [
+          {
+            field = jira.Field.instance.Reporter__user
+            check = "USER_IS"
+            criteria = [
+              {
+                type = "ID"
+                value = {
+                  id = "qm:005a9fe4-6f0c-4dc0-b1a1-d8a2f805f412:68ece005-9ace-4c1f-b9b7-65acb62e4b92"
+                  displayName = "Alana Hansen"
+                }
+              },
+            ]
+          },
+        ]
+        operator = "OR"
+      }
+      children = [
+      ]
+      conditions = [
+      ]
+    },
+    {
+      component = "ACTION"
+      schemaVersion = 2
+      type = "jira.issue.link"
+      value = {
+        linkType = jira.IssueLinkType.instance.Blocks
+        issue = {
+          type = "COPY"
+          value = "trigger"
+        }
+        linkTypeDirection = "inward"
+      }
+      children = [
+      ]
+      conditions = [
+      ]
+    },
+  ]
+  canOtherRuleTrigger = false
+  notifyOnError = "FIRSTERROR"
+  projects = [
+    {
+      projectId = jira.Project.instance.AlonCompanyProject
+    },
+  ]
+  labels = [
+  ]
+  tags = [
+  ]
+  ruleHome = {
+    ruleLifecycleHome = {
+      locationARI = "ari:cloud:jira:128baddc-c238-4857-b249-cfc84bd10c4b:project/10024"
+    }
+    ruleBillingHome = {
+      locationARI = "ari:cloud:jira-software::site/128baddc-c238-4857-b249-cfc84bd10c4b"
+    }
+  }
+  writeAccessType = "UNRESTRICTED"
+  collaborators = [
+  ]
+  billingType = "NORMAL"
+  _alias = "IdoProject2"
+}

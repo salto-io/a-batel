@@ -1,0 +1,15 @@
+jira.Screen PROC0356__Simple_Issue_Tracking_Resolve_Issue_Screen@fssssss {
+  tabs = {
+    Field_Tab@s = {
+      name = "Field Tab"
+      fields = [
+        jira.Field.instance.Resolution__resolution,
+        jira.Field.instance.Linked_Issues__array@suu,
+        jira.Field.instance.NewCustomFieldLior__multicheckboxes__c,
+      ]
+      position = 0
+    }
+  }
+  name = "PROC0356: Simple Issue Tracking Resolve Issue Screen"
+  description = ""
+}

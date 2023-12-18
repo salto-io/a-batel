@@ -1,0 +1,5 @@
+jira.Status neta_temp_1@b {
+  name = "neta-temp-1"
+  statusCategory = jira.StatusCategory.instance.To_Do@s
+  description = ""
+}

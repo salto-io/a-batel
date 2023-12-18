@@ -1,0 +1,5 @@
+jira.Status fut_complete@s {
+  name = "fut complete"
+  statusCategory = jira.StatusCategory.instance.To_Do@s
+  description = ""
+}

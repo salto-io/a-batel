@@ -1,0 +1,15 @@
+jira.Screen AlonScreen3 {
+  tabs = {
+    Field_Tab@s = {
+      name = "Field Tab"
+      fields = [
+        jira.Field.instance.guytest__float__c,
+        jira.Field.instance.NewCustomFieldLior__multicheckboxes__c,
+        jira.Field.instance.testSelectList4__cascadingselect__c,
+      ]
+      position = 0
+    }
+  }
+  name = "AlonScreen3"
+  description = ""
+}

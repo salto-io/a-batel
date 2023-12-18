@@ -1,0 +1,5 @@
+jira.Status in_development@s {
+  name = "in development"
+  statusCategory = jira.StatusCategory.instance.To_Do@s
+  description = ""
+}

@@ -1,0 +1,5 @@
+jira.Status name84 {
+  name = "name84"
+  statusCategory = jira.StatusCategory.instance.Done
+  description = "auto generated for tests6"
+}

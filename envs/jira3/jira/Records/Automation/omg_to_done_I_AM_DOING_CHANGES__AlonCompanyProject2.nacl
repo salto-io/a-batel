@@ -1,0 +1,123 @@
+jira.Automation omg_to_done_I_AM_DOING_CHANGES__AlonCompanyProject2@sssssslu {
+  name = "omg to done I AM DOING CHANGES!"
+  state = "DISABLED"
+  authorAccountId = {
+    id = "60e8b78784c9920071996842"
+    displayName = "Lior Neudorfer"
+  }
+  actor = {
+    type = "ACCOUNT_ID"
+    value = {
+      id = "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077"
+      displayName = "Automation for Jira"
+    }
+  }
+  trigger = {
+    component = "TRIGGER"
+    schemaVersion = 1
+    type = "jira.issue.event.trigger:commented"
+    value = {
+      eventKey = "jira:issue_updated"
+      issueEvent = "issue_commented"
+      eventTypes = [
+      ]
+    }
+    children = [
+    ]
+    conditions = [
+    ]
+  }
+  components = [
+    {
+      component = "CONDITION"
+      schemaVersion = 1
+      type = "jira.comparator.condition"
+      value = {
+        first = "{{issue.comments.last.body}}"
+        second = "omg"
+        operator = "CONTAINS"
+      }
+      children = [
+      ]
+      conditions = [
+      ]
+    },
+    {
+      component = "ACTION"
+      schemaVersion = 10
+      type = "jira.issue.transition"
+      value = {
+        operations = [
+          {
+            field = {
+              type = "ID"
+              value = jira.Field.instance.Assignee__user
+            }
+            fieldType = "assignee"
+            type = "SET"
+            value = {
+              type = "SMART"
+              value = "{{initiator}}"
+            }
+          },
+        ]
+        advancedFields = '''
+{
+    "update": {
+        "comment": [
+            {
+                "add": {
+                    "body": "Thanks for raising {{issue.${ jira.Field.instance.Status__status }}}!."
+                }
+            }
+        ]
+    },
+    "fields": {
+        "resolution": {
+            "name": "Fixed"
+        }
+    }
+}
+'''
+        sendNotifications = true
+        destinationStatus = {
+          type = "ID"
+          value = jira.Status.instance.a_shared_status3@s
+        }
+        transitionMatch = ""
+      }
+      children = [
+      ]
+      conditions = [
+      ]
+    },
+  ]
+  canOtherRuleTrigger = false
+  notifyOnError = "FIRSTERROR"
+  projects = [
+    {
+      projectId = jira.Project.instance.AlonCompanyProject2
+    },
+  ]
+  labels = [
+  ]
+  tags = [
+    {
+      tagType = "IS_RULE_UPDATED"
+      tagValue = "true"
+    },
+  ]
+  ruleHome = {
+    ruleLifecycleHome = {
+      locationARI = "ari:cloud:jira:128baddc-c238-4857-b249-cfc84bd10c4b:project/10053"
+    }
+    ruleBillingHome = {
+      locationARI = "ari:cloud:jira-software::site/128baddc-c238-4857-b249-cfc84bd10c4b"
+    }
+  }
+  writeAccessType = "UNRESTRICTED"
+  collaborators = [
+  ]
+  billingType = "NORMAL"
+  _alias = "omg to done I AM DOING CHANGES!"
+}

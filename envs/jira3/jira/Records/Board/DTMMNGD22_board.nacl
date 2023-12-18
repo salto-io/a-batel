@@ -1,0 +1,39 @@
+jira.Board DTMMNGD22_board@s {
+  name = "DTMMNGD22 board"
+  type = "simple"
+  admins = {
+    users = [
+      {
+        id = "62d20c47a94a6f9c0eff9866"
+        displayName = "Ido Zak"
+      },
+    ]
+  }
+  location = {
+    projectId = jira.Project.instance.IdoTeamManaged22
+  }
+  filterId = jira.Filter.instance.missing_10095
+  columnConfig = {
+    columns = [
+      {
+        name = "To Do"
+        statuses = [
+          jira.Status.instance.missing_10188,
+        ]
+      },
+      {
+        name = "In Progress"
+        statuses = [
+          jira.Status.instance.missing_10189,
+        ]
+      },
+      {
+        name = "Done"
+        statuses = [
+          jira.Status.instance.missing_10190,
+        ]
+      },
+    ]
+    constraintType = "none"
+  }
+}
