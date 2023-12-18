@@ -1,0 +1,11 @@
+salesforce.Role NEWNEW {
+  fullName = "NEWNEW"
+  caseAccessLevel = "Edit"
+  contactAccessLevel = "Edit"
+  description = "im new"
+  mayForecastManagerShare = false
+  name = "NEWNEW"
+  opportunityAccessLevel = "Edit"
+  parentRole = salesforce.Role.instance.CEO
+  _alias = "NEWNEW"
+}
