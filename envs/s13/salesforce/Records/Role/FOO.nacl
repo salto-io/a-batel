@@ -2,7 +2,7 @@ salesforce.Role FOO {
   fullName = "FOO"
   caseAccessLevel = "Edit"
   contactAccessLevel = "Edit"
-  description = "FOO was changed"
+  description = "FOO single env editing"
   mayForecastManagerShare = false
   name = "FOO service"
   opportunityAccessLevel = "Edit"
