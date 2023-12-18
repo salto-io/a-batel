@@ -4,7 +4,7 @@ salesforce.Role LALA {
   contactAccessLevel = "Edit"
   description = "LALA"
   mayForecastManagerShare = false
-  name = "LALA changed"
+  name = "LALA single-env"
   opportunityAccessLevel = "Edit"
   parentRole = salesforce.Role.instance.CEO
   _alias = "LALA"
